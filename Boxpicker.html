@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Picker</title>
+    <style>
+        body,
+        html {
+            background-color: rgb(168, 168, 168);
+        }
+        
+        #container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            height: 25em;
+        }
+        
+        #one,
+        #two,
+        #three,
+        #four,
+        #five,
+        #six,
+        #seven,
+        #eight,
+        #nine {
+            background-color: white;
+            border: solid black 2px;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        }
+        
+        #button {
+            margin-top: 1em;
+            display: flex;
+            justify-content: right;
+        }
+        
+        .btn {
+            height: 3em;
+            float: right;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body onload="shuffleArray(array)">
+    <h2>Box Picker</h2>
+    <div id="container">
+        <div id="one" onclick="func1()">1</div>
+        <div id="two" onclick="func2()">2</div>
+        <div id="three" onclick="func3()">3</div>
+        <div id="four" onclick="func4()">4</div>
+        <div id="five" onclick="func5()">5</div>
+        <div id="six" onclick="func6()">6</div>
+        <div id="seven" onclick="func7()">7</div>
+        <div id="eight" onclick="func8()">8</div>
+        <div id="nine" onclick="func9()">9</div>
+    </div>
+    <br><br>
+    <input type="button" class="btn" value="Restart Game" onclick="Restart()">
+</body>
+<script>
+    array = ["incorrect", "incorrect", "incorrect", "incorrect", "incorrect", "incorrect", "correct", "correct", "correct"]
+
+    function Restart() {
+        location.reload();
+    }
+
+    function func1() {
+        document.getElementById("one").innerHTML = array[0];
+        if (document.getElementById("one").innerHTML == "correct") {
+            document.getElementById("one").style.color = "green"
+        } else {
+
+            document.getElementById("one").style.color = "red"
+        }
+    }
+
+    function func2() {
+        document.getElementById("two").innerHTML = array[1];
+        if (document.getElementById("two").innerHTML == "correct") {
+            document.getElementById("two").style.color = "green"
+        } else {
+
+            document.getElementById("two").style.color = "red"
+        }
+    }
+
+    function func3() {
+        document.getElementById("three").innerHTML = array[2];
+        if (document.getElementById("three").innerHTML == "correct") {
+            document.getElementById("three").style.color = "green"
+        } else {
+
+            document.getElementById("three").style.color = "red"
+        }
+    }
+
+    function func4() {
+        document.getElementById("four").innerHTML = array[3];
+        if (document.getElementById("four").innerHTML == "correct") {
+            document.getElementById("four").style.color = "green"
+        } else {
+
+            document.getElementById("four").style.color = "red"
+        }
+    }
+
+    function func5() {
+        document.getElementById("five").innerHTML = array[4];
+        if (document.getElementById("five").innerHTML == "correct") {
+            document.getElementById("five").style.color = "green"
+        } else {
+
+            document.getElementById("five").style.color = "red"
+        }
+    }
+
+    function func6() {
+        document.getElementById("six").innerHTML = array[5];
+        if (document.getElementById("six").innerHTML == "correct") {
+            document.getElementById("six").style.color = "green"
+        } else {
+
+            document.getElementById("six").style.color = "red"
+        }
+    }
+
+    function func7() {
+        document.getElementById("seven").innerHTML = array[6];
+        if (document.getElementById("seven").innerHTML == "correct") {
+            document.getElementById("seven").style.color = "green"
+        } else {
+
+            document.getElementById("seven").style.color = "red"
+        }
+    }
+
+    function func8() {
+        document.getElementById("eight").innerHTML = array[7];
+        if (document.getElementById("eight").innerHTML == "correct") {
+            document.getElementById("eight").style.color = "green"
+        } else {
+
+            document.getElementById("eight").style.color = "red"
+        }
+    }
+
+    function func9() {
+        document.getElementById("nine").innerHTML = array[8];
+        if (document.getElementById("nine").innerHTML == "correct") {
+            document.getElementById("nine").style.color = "green"
+        } else {
+
+            document.getElementById("nine").style.color = "red"
+        }
+    }
+
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+</script>
+
+</html>
